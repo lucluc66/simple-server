@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="utf-8" />
+        <!-- For responsive page -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Contact page" />
+        <meta name="keywords" content="Contact, TacoTuesday"/>
+        <link href="favicon.ico" rel="icon" type="image/x-icon" />
+        <title>CONTACT</title> 
+    </head>
+
+    <body>
+        <form>
+            <div>
+                <label>Name:</label>
+                <input type="text" id="inputname" required>
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="text" id="inputemail" required>
+            </div>
+            <div>
+                <label>Options:</label>
+                <select name="options">
+                    <option value='careers'>Careers</option>
+                    <option value='inquiry'>Inquiry</option>
+                    <option value='catering'>Catering</option>
+                    <option value='complaint'>Complaint</option>
+                </select>
+            </div>
+            <div>
+                <label>Description:</label>
+            </div>
+            <div>
+                <textarea></textarea>
+            </div>
+            <button type="submit" onclick="verify(); return false;">Submit</button>
+        </form>
+        <script>
+            function hasNumber(myString){
+                console.log('Validate name!');
+                const re = /\d/g;
+                return re.test(myString);
+            }
+
+            function validateEmail(email) {
+                console.log('Validate email!');
+                const re = /\w+@[\w+\.\w+]+/g;
+                return re.test(email);
+            }
+
+            function verify(){
+                const name = document.getElementById("inputname").value;
+                const inputemail = document.getElementById("inputemail").value;
+                console.log(name);
+                console.log(inputemail);
+
+
+                if(hasNumber(name)){
+                    console.log("Invalid name");
+                    alert('Not a valid name!');
+                }else if(validateEmail(inputemail) != true){
+                    console.log("Invalid email");
+                    alert('Not a valid email!');
+                }else{
+                    console.log("all good");
+                    document.body.innerHTML = "<h1>Submitted!</h1>"; 
+                }
+               
+            }
+        </script>
+    </body>
+</html>
