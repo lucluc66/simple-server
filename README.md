@@ -1,3 +1,3 @@
 # simple-server
 
-<a href="Exercise 3- Serving Up HTML.pdf"\>
+<embed src='Exercise3.pdf'></embed>
